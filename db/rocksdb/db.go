@@ -21,11 +21,11 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/gotoxu/gorocksdb"
 	"github.com/magiconair/properties"
 	"github.com/pingcap/go-ycsb/pkg/prop"
 	"github.com/pingcap/go-ycsb/pkg/util"
 	"github.com/pingcap/go-ycsb/pkg/ycsb"
-	"github.com/tecbot/gorocksdb"
 )
 
 //  properties
@@ -61,6 +61,8 @@ const (
 	rocksdbFilterPolicy                     = "rocksdb.filter_policy"
 	rocksdbIndexType                        = "rocksdb.index_type"
 	rocksdbWALDir                           = "rocksdb.wal_dir"
+	rocksdbMaxBackgroundJobs                = "rocksdb.max_background_jobs"
+	rocksdbMaxSubCompactions                = "rocksdb.max_sub_compactions"
 	// TODO: add more configurations
 )
 
@@ -156,6 +158,8 @@ func getOptions(p *properties.Properties) *gorocksdb.Options {
 	opts.SetUseFsync(p.GetBool(rocksdbUseFsync, false))
 	opts.SetWriteBufferSize(p.GetInt(rocksdbWriteBufferSize, 64<<20))
 	opts.SetMaxWriteBufferNumber(p.GetInt(rocksdbMaxWriteBufferNumber, 2))
+	opts.SetMaxBackgroundJobs(p.GetInt(rocksdbMaxBackgroundJobs, 8))
+	opts.SetMaxSubCompactions(uint32(p.GetUint64(rocksdbMaxSubCompactions, 3)))
 	opts.SetWalDir(p.GetString(rocksdbWALDir, ""))
 
 	opts.SetBlockBasedTableFactory(getTableOptions(p))
