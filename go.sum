@@ -243,6 +243,8 @@ github.com/gorilla/websocket v1.4.0 h1:WDFjx/TMzVgy9VdMMQi2K2Emtwi2QcUQsztZ/zLaH
 github.com/gorilla/websocket v1.4.0/go.mod h1:E7qHFY5m1UJ88s3WnNqhKjPHQ0heANvMoAMk2YaljkQ=
 github.com/gotoxu/gorocksdb v0.0.0-20210712121413-81ece775e1c2 h1:2uOIYna4d53KQnVS71YbjTksuHhkOXi483zWgfpHGxo=
 github.com/gotoxu/gorocksdb v0.0.0-20210712121413-81ece775e1c2/go.mod h1:B1C0FEsmGyudM3O4JsZvMkizzEa8acLwv+JGXTCRYnE=
+github.com/gotoxu/gorocksdb v0.0.0-20210726072417-399ed731383f h1:BoQcidTjeRwkbiR5Zwc/Q2epVARm/u8apVRwMsQtD1M=
+github.com/gotoxu/gorocksdb v0.0.0-20210726072417-399ed731383f/go.mod h1:B1C0FEsmGyudM3O4JsZvMkizzEa8acLwv+JGXTCRYnE=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.0/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=
 github.com/grpc-ecosystem/go-grpc-middleware v1.0.1-0.20190118093823-f849b5445de4/go.mod h1:FiyG127CGDf3tlThmgyCl78X/SZQqEOJBCDaAfeWzPs=
 github.com/grpc-ecosystem/go-grpc-middleware v1.1.0 h1:THDBEeQ9xZ8JEaCLyLQqXMMdRqNr0QAUJTIkQAUtFjg=

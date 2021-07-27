@@ -63,6 +63,8 @@ const (
 	rocksdbWALDir                           = "rocksdb.wal_dir"
 	rocksdbMaxBackgroundJobs                = "rocksdb.max_background_jobs"
 	rocksdbMaxSubCompactions                = "rocksdb.max_sub_compactions"
+	rocksdbEnableTitan                      = "rocksdb.titan.enable"
+	titandbDirname                          = "titandb.dirname"
 	// TODO: add more configurations
 )
 
@@ -161,8 +163,14 @@ func getOptions(p *properties.Properties) *gorocksdb.Options {
 	opts.SetMaxBackgroundJobs(p.GetInt(rocksdbMaxBackgroundJobs, 8))
 	opts.SetMaxSubCompactions(uint32(p.GetUint64(rocksdbMaxSubCompactions, 3)))
 	opts.SetWalDir(p.GetString(rocksdbWALDir, ""))
-
 	opts.SetBlockBasedTableFactory(getTableOptions(p))
+
+	enableTitan := p.GetBool(rocksdbEnableTitan, false)
+	if enableTitan {
+		titanOpts := gorocksdb.NewDefaultTitanOptions()
+		titanOpts.SetDirname(p.GetString(titandbDirname, ""))
+		opts.SetTitanDBOptions(titanOpts)
+	}
 
 	return opts
 }

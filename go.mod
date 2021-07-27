@@ -18,7 +18,7 @@ require (
 	github.com/go-redis/redis v6.15.1+incompatible
 	github.com/go-sql-driver/mysql v1.5.0
 	github.com/gocql/gocql v0.0.0-20181124151448-70385f88b28b
-	github.com/gotoxu/gorocksdb v0.0.0-20210712121413-81ece775e1c2
+	github.com/gotoxu/gorocksdb v0.0.0-20210726072417-399ed731383f
 	github.com/json-iterator/go v1.1.10 // indirect
 	github.com/jstemmer/go-junit-report v0.9.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
