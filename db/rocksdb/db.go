@@ -65,6 +65,7 @@ const (
 	rocksdbMaxSubCompactions                = "rocksdb.max_sub_compactions"
 	rocksdbEnableTitan                      = "rocksdb.titan.enable"
 	titandbDirname                          = "titandb.dirname"
+	titandbMinBlobSize                      = "titan.min.blobsize"
 	// TODO: add more configurations
 )
 
@@ -169,6 +170,7 @@ func getOptions(p *properties.Properties) *gorocksdb.Options {
 	if enableTitan {
 		titanOpts := gorocksdb.NewDefaultTitanOptions()
 		titanOpts.SetDirname(p.GetString(titandbDirname, ""))
+		titanOpts.SetMinBlobSize(p.GetUint64(titandbMinBlobSize, 4096))
 		opts.SetTitanDBOptions(titanOpts)
 	}
 
